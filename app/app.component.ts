@@ -5,10 +5,17 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
   template: `
     <div class="app">
-      Hello!
+      {{ title }}
     </div>
-  `
+  `,
+  // Instead we could use templateUrl
+  // to create separetes views
+  // templateUrl: './app.component.html'
 })
-export class AppComponent {
 
+export class AppComponent {
+  title: string;
+  constructor() {
+    this.title  = 'Angular 2 Demo';
+  }
 }
