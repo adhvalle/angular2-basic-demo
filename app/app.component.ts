@@ -5,7 +5,10 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
   template: `
     <div class="app">
-      {{ title }}
+      <input
+        type="text"
+        [ngModel]="name"/>
+      <div>{{ name }}</div>
     </div>
   `,
   // Instead we could use templateUrl
@@ -14,8 +17,9 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title: string;
-  constructor() {
-    this.title  = 'Angular 2 Demo';
+  name: string = 'Andres';
+  handleBlur(event: any) {
+    this.name = event.target.value;
+    console.log(event);
   }
 }
